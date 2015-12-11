@@ -1,0 +1,18 @@
+$mo-card_padding: 12px;
+$mo-card_border-radius: 3px;
+$mo-card_bg: #fff;
+
+.mo-card {
+    background-color: $mo-card_bg;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    border-radius: $mo-card_border-radius;
+}
+
+.mo-card-header {
+     padding: $mo-card_padding;
+        border-bottom: 1px solid $divider;
+}
+
+.mo-card-section {
+    padding: $mo-card_padding;
+}

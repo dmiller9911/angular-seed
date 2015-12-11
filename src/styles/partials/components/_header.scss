@@ -1,0 +1,52 @@
+$mo-header_background-color: $primary-700;
+$mo-header_color: #fff;
+
+.mo-header {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $mo-header_height;
+    background-color: $mo-header_background-color;
+    color: $mo-header_color;
+    z-index: 100;
+    
+    .mo-header_logo {
+        padding: 10px;
+    }
+    
+    .mo-header_section {
+        @include flex(1, 1, auto);
+        
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 10px;
+    }
+    
+    .mo-header_section--title {
+        font-size: 18px;
+        font-weight: 700px;
+    }
+    
+    .mo-header_section--right {
+        text-align: right;
+    }
+    
+    .mo-header_section--center {
+        text-align: center;
+    }
+    
+    a {
+        color: $mo-header_color;
+        opacity: .6;
+        transition: opacity .2s ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

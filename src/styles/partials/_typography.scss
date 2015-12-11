@@ -1,0 +1,31 @@
+body {
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+    font-size: $base-font-size;
+    color: $text-primary;
+}
+
+h1 {
+    font-size:  48px;
+    line-height: 1.05em;
+}
+
+
+h2 {
+    font-size:  36px;
+    line-height: 1.25em;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 1.25em;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 1.22222222em;
+}
+
+h5 {
+    font-size: 16px;
+}

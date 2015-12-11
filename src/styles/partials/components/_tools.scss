@@ -1,0 +1,35 @@
+.tool-list {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    
+    .tool-list_tool {
+        @include flex(1, 0, 150px);
+        max-width: 250px;
+        min-width: 250px;
+        margin: 15px;
+    }
+}
+
+.tool {
+    .tool_img {
+        text-align: center;
+    }
+
+    .tool_description {
+        color: $text-secondary;
+        padding: 5px;
+    }
+    
+    .tool_link {
+        padding: 5px;
+        font-weight: 700;
+        text-align: center;
+        a {
+            color: $accent-400;
+            &:hover {
+                color: $accent-700;
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="theme-color" content="#303030">
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />
+
+        <title>Angular Seed</title>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+        <!-- build:css css/app.min.css -->
+        
+        <!-- Styles -->
+        <link type="text/css" rel="stylesheet" href="css/app.css">
+        
+        <!-- endbuild -->
+        
+        
+        <!-- build:js js/vendor.min.js -->
+        
+        <!-- Vendor Libs-->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/lodash/lodash.min.js"></script>
+        <script src="bower_components/moment/min/moment.min.js"></script>
+        
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        
+        <!-- endbuild -->
+        
+    </head>
+
+    <body data-ng-app="mo.seed">
+        
+        <mo-header></mo-header>
+        
+        <div class="main-container">
+            <div data-ui-view=""></div>
+        </div>
+        
+        
+        <!-- build:js js/app.min.js -->
+        
+        <!-- Reuseable Blocks Module-->
+        <script src="app/blocks/blocks.module.js"></script>
+        <script src="app/blocks/interceptor.factory.js"></script>
+        <script src="app/blocks/logger.factory.js"></script>
+        <script src="app/blocks/storage.factory.js"></script>
+        
+        <!-- Core Module -->
+        <script src="app/core/core.module.js"></script>
+        <script src="app/core/core.config.js"></script>
+        <script src="app/core/core.routes.js"></script>
+        <script src="app/core/api.provider.js"></script>
+        <script src="app/core/core.constants.js"></script>
+        
+        <!-- Components Module -->
+        <script src="app/components/components.module.js"></script>
+        
+        <script src="app/components/header/header.directive.js"></script>
+        <script src="app/components/header/header.controller.js"></script>
+        
+        <!-- Home Module -->
+        <script src="app/home/home.module.js"></script>
+        <script src="app/home/home.routes.js"></script>
+        <script src="app/home/home.controller.js"></script>
+        
+        <!-- Photos Module -->
+        <script src="app/photos/photos.module.js"></script>
+        <script src="app/photos/photos.factory.js"></script>
+        
+        <!-- Bootstrap App -->
+        <script src="app/app.module.js"></script>
+        
+        <!-- endbuild -->
+    </body>
+
+</html>

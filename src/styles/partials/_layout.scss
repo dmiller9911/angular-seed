@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $main-background;
+}
+
+.main-container {
+    margin-top:$mo-header_height;
+}
+
+.container {
+    margin: 0 auto;
+    
+    
+    &.container--shifted {
+        margin-top: 35px + $mo-header_height;
+    }
+    
+    @media(min-width: $sm) {
+        width: 80%;
+    }
+    
+    @media(min-width: $md) {
+        width: 70%;
+    }
+    
+    @media(min-width: $lg) {
+        width: 60%;
+    }
+}

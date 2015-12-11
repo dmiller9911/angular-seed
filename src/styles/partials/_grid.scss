@@ -1,0 +1,98 @@
+$columns: 12;
+$col-gutter: 7px;
+
+.row {
+    @include flexbox;
+    @include flex-flow(row wrap);
+}
+
+@mixin generate-columns {
+    @include generate-xs-columns;
+    @include generate-sm-columns;
+    @include generate-md-columns;
+    @include generate-lg-columns;
+    @include generate-xl-columns;
+}
+
+
+@mixin generate-xs-columns {
+    @for $i from 1 through $columns {
+        .col-xs-#{$i} {
+            @include flex(1);
+            @include flex-shrink(0);
+            @include flex-basis(($i * 100% / $columns));
+            
+            padding-left: $col-gutter;
+            padding-right: $col-gutter;
+            min-width: ($i * 100% / $columns);
+            max-width: ($i * 100% / $columns);
+        }
+    }
+}
+
+@mixin generate-sm-columns {
+    @media(min-width: $sm) {
+        @for $i from 1 through $columns {
+            .col-sm-#{$i} {
+                @include flex(1);
+                @include flex-shrink(0);
+                @include flex-basis(($i * 100% / $columns));
+                padding-left: $col-gutter;
+                padding-right: $col-gutter;
+                min-width: ($i * 100% / $columns);
+                max-width: ($i * 100% / $columns);    
+            }
+        }
+    }
+}
+
+@mixin generate-md-columns {
+    @media(min-width: $md) {
+        @for $i from 1 through $columns {
+            .col-md-#{$i} {
+                @include flex(1);
+                @include flex-shrink(0);
+                @include flex-basis(($i * 100% / $columns));
+                padding-left: $col-gutter;
+                padding-right: $col-gutter;
+                min-width: ($i * 100% / $columns);
+                max-width: ($i * 100% / $columns);    
+            }
+        }
+    }
+}
+
+@mixin generate-lg-columns {
+    @media(min-width: $lg) {
+        @for $i from 1 through $columns {
+            .col-lg-#{$i} {
+                @include flex(1);
+                @include flex-shrink(0);
+                @include flex-basis(($i * 100% / $columns));
+                padding-left: $col-gutter;
+                padding-right: $col-gutter;
+                min-width: ($i * 100% / $columns);
+                max-width: ($i * 100% / $columns);    
+            }
+        }
+    }
+}
+
+@mixin generate-xl-columns {
+    @media(min-width: $xl) {
+        @for $i from 1 through $columns {
+            .col-xl-#{$i} {
+               @include flex(1);
+                @include flex-shrink(0);
+                @include flex-basis(($i * 100% / $columns));
+                padding-left: $col-gutter;
+                padding-right: $col-gutter;
+                min-width: ($i * 100% / $columns);
+                max-width: ($i * 100% / $columns);    
+            }
+        }
+    }
+}
+
+
+@include generate-columns;

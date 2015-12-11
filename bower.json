@@ -1,0 +1,30 @@
+{
+  "name": "angular-seed",
+  "description": "Angular Seed that adheres to the Style Guide put together by John Papa",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Doug Miller doug.miller@moseyout.com"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Angular",
+    "Seed"
+  ],
+  "homepage": "https://github.com/dmiller9911/angular-seed",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "jquery": "~2.1.4",
+    "angular-ui-router": "~0.2.15",
+    "lodash": "~3.10.1",
+    "moment": "~2.10.6"
+  }
+}
