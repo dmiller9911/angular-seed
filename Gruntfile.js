@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         },
         concurrent: {
 			dev: ['watch:styles', 'connect:dev'],
-            prod: ['connect:prod'],
+            dist: ['connect:dist'],
 			options: {
 				logConcurrentOutput: true,
 				limit: 10
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                     keepalive: true
                 }
             },
-            prod: {
+            dist: {
                 options: {
                     port: 9000,
                     base: 'dist',
@@ -84,6 +84,17 @@ module.exports = function(grunt) {
                 dest: 'dist/'
             }
         },
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            dist: {
+                files: {
+                    'dist/css/app.min.css': ['.tmp/app.css']
+                }
+            }
+        },
         sass: {
             options: {
                 sourceMap: false
@@ -92,17 +103,22 @@ module.exports = function(grunt) {
                 files: {
                     'src/css/app.css': 'src/styles/main.scss'
                 }
+            },
+            dist: {
+                files: {
+                    '.tmp/app.css': 'src/styles/main.scss'
+                }
             }
         },
         uglify: {
             app: {
                 files: {
-                    'dist/app.min.js': ['.tmp/app.js']
+                    'dist/js/app.min.js': ['.tmp/app.js']
                 }
             },
             vendor: {
                 files: {
-                    'dist/vendor.min.js': ['.tmp/vendor.js']
+                    'dist/js/vendor.min.js': ['.tmp/vendor.js']
                 }
             }
         },
@@ -118,7 +134,7 @@ module.exports = function(grunt) {
         watch: {
             styles: {
                 files: ['src/styles/**/*.scss'], // which files to watch
-                tasks: ['build-styles'],
+                tasks: ['build-styles-dev'],
                 options: {
                     nospawn: true
                 }
@@ -144,16 +160,22 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['server']);
     
     // Build Tasks
-    grunt.registerTask('build', ['clean:main', 'build-styles','build-app', 'build-vendor', 'copy:html', 'copy:assests', 'useminPrepare','usemin']);
-    grunt.registerTask('build-styles', ['clean:styles', 'sass']);
+    grunt.registerTask('build', ['clean:main', 'build-styles-dist', 'build-app', 'build-vendor', 'copy:html', 'copy:assests', 'useminPrepare','usemin']);
+    //Styles
+    grunt.registerTask('build-styles-dev', ['clean:styles', 'sass:dev']);
+    grunt.registerTask('build-styles-dist', ['clean:styles', 'sass:dist', 'cssmin:dist']);
+    
+    //App JS
     grunt.registerTask('build-app', ['clean:app', 'concat:app', 'uglify:app']);
+    
+    //Vendor JS
     grunt.registerTask('build-vendor', ['clean:vendor', 'bower_concat:vendor', 'concat:vendor', 'uglify:vendor']);
     
-    
-    //Server Task
+    //Server Tasks
     //Dev server Task.  Watches for Changes to LESS files. And starts connect from src directory
-    grunt.registerTask('server', ['build-styles', 'concurrent:dev']);
-    //Prod server Task.  Builds from src to dist.  Starts connect form the dist directory
-    grunt.registerTask('server-prod', ['build', 'concurrent:prod']);
+    grunt.registerTask('server', ['build-styles-dev', 'concurrent:dev']);
+    
+    //Dist server Task.  Builds from src to dist.  Starts connect from the dist directory
+    grunt.registerTask('server-dist', ['build', 'concurrent:dist']);
     
 };
