@@ -7,7 +7,7 @@ It contains a sample AngularJS application with a few development tools configur
 
 The seed application itself is only 1 state, but displayed ways to use each of Angular's main methods (Config, Controllers, Directives, Factories).
 
-
+[Demo Here](http://dmiller9911.github.io/angular-seed)
 
 ## Getting Started
 
