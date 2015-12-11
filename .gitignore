@@ -29,5 +29,4 @@ node_modules
 /src/bower_components
 .tmp
 .sass-cache
-dist
 /src/css
